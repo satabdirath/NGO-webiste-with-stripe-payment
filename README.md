@@ -13,11 +13,11 @@
 
 <img src="https://i.postimg.cc/fySx7kGW/Screenshot-52.png" alt="project-screenshot" width="1800" height="400/">
 
-<img src="https://i.postimg.cc/d1x2TGSS/Screenshot-53.png" alt="project-screenshot" width="1800" height="400/">
+<img src="https://i.postimg.cc/d1x2TGSS/Screenshot-53.png" alt="project-screenshot" width="1800" height="370/">
 
 <img src="https://i.postimg.cc/8PWYNC7V/Screenshot-54.png" alt="project-screenshot" width="1800" height="600/">
 
-<img src="https://i.postimg.cc/05z3Xnxj/Screenshot-55.png" alt="project-screenshot" width="1800" height="400/">
+<img src="https://i.postimg.cc/05z3Xnxj/Screenshot-55.png" alt="project-screenshot" width="1800" height="370/">
 
 <img src="https://i.postimg.cc/ZYXQGNKc/Screenshot-56.png" alt="project-screenshot" width="1800" height="550/">
 
