@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="form.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .modal-content {
+      background-color: #2a4d69;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #f9f9f9;
+    }
+
+    .modal h3 {
+      font-size: 24px;
+    }
+
+    .modal p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Make a Donation</h2>
+    <form id="payment-form">
+      <div class="input-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="input-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="amount">Amount you would like to donate</label>
+        <input type="number" id="amount" name="amount" placeholder="e.g., $10" min="1" required>
+      </div>
+      <div class="input-group">
+        <label>Method</label>
+        <div class="radio-group">
+          <input type="radio" id="credit-card" name="method" value="credit-card" checked>
+          <label for="credit-card">Card(Debit/Credit)</label>
+        </div>
+      </div>
+      <div id="card-element" class="input-group"></div>
+      <button type="submit" id="submit-button">Donate</button>
+    </form>
+  </div>
+
+  <!-- Modal for success or error message -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modal-heading">Processing Payment</h3>
+      <p id="modal-message">Please wait...</p>
+    </div>
+  </div>
+
+  <script>
+    const stripe = Stripe('pk_test_51PBFNmSC7quupKi5iiqTRPhF33ndiHBRDHn5FzYX9Iw69wjAKXtt6PKtfWSIwjEsoYiUuXkfWdmGPm6VsV1ov8F100tj3hbzc6');
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const amount = document.getElementById('amount').value;
+      const email = document.getElementById('email').value;
+
+      // Show the modal while processing
+      showModal("Processing Payment", "Please wait...");
+
+      // Create PaymentIntent via server
+      const response = await fetch('process_donation.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount, email })
+      });
+
+      const { clientSecret, error } = await response.json();
+      if (error) {
+        showModal("Error", `Error: ${error.message}`);
+        return;
+      }
+
+      // Confirm the payment on the frontend
+      const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: cardElement,
+          billing_details: { email }
+        }
+      });
+
+      if (confirmError) {
+        showModal("Error", `Error: ${confirmError.message}`);
+      } else if (paymentIntent.status === 'succeeded') {
+        // Payment success, show success message
+        showModal("Payment Successful!", "Thank you for your donation.");
+        setTimeout(() => {
+          window.location.href = 'index.php';
+        }, 3000); // 3 seconds delay for redirect
+      }
+    });
+
+    // Function to show the modal
+    function showModal(heading, message) {
+      document.getElementById('modal-heading').innerText = heading;
+      document.getElementById('modal-message').innerText = message;
+      document.getElementById('success-modal').style.display = 'flex'; // Display modal
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('success-modal').style.display = 'none'; // Hide modal
+    }
+  </script>
+</body>
+</html>
+

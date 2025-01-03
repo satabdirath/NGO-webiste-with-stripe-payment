@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NGO Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Minati Foundation</h1>
+        </div>
+            <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About </a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="form.html">Donate</a></li>
+                <li><a href="#contact">Contact </a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- About Us Section -->
+<!-- About Us Section -->
+<section id="about">
+    <div class="section-container">
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="images/banner1.png" alt="Image 1">
+                    <div class="slide-content">
+            
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/banner2.png" alt="Image 2">
+                    <div class="slide-content">
+                  
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/banner3.png" alt="Image 3">
+                    <div class="slide-content">
+                     
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="aboutus" style="background-color: #f9f9f9; padding: 50px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 30px; margin-bottom: 120px;" class="aboutus-container">
+      <!-- Text Content -->
+      <div style="flex: 1;">
+        <h4 style="color: #2a4d69; margin-bottom: 10px;">About Our Foundation</h4>
+        <h2 style="color: #2a4d69; font-size: 36px; font-weight: bold; margin-bottom: 20px;">
+          We Are On A Mission To Help Helpless
+        </h2>
+        <p style="color: #333; line-height: 1.6; margin-bottom: 15px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, mod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <p style="color: #333; line-height: 1.6; margin-bottom: 25px;">
+          Ut enim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <a href="form.html" style="display: inline-block; padding: 10px 20px; background-color: #2a4d69; color: #fff; text-decoration: none; border-radius: 5px;">
+            Donate
+          </a>
+          
+      </div>
+  
+      <!-- Image Content -->
+      <div style="flex: 1; position: relative; display: flex; justify-content: flex-end; margin-left: 130px;">
+        <img
+          src="images/hun1.jpg"
+          alt="Main Image"
+        />
+        <img
+          src="images/hun2.jpeg"
+          alt="Overlapping Image"
+          style="position: absolute;"
+        />
+      </div>
+    </div>
+  </section>    
+    
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <div class="section-container">
+            <h2>Our Programs</h2>
+            <div class="program-list">
+                <!-- Program 1: Child Education -->
+                <div class="program-item">
+                    <i class="fas fa-book-reader program-icon"></i>
+                    <h3>Child Education</h3>
+                    <p>Our Child Education program aims to provide quality education to underprivileged children, empowering them to create better futures. We focus on providing school supplies, scholarships, and teacher training.</p>
+                </div>
+    
+                <!-- Program 2: Health Initiatives -->
+                <div class="program-item">
+                    <i class="fas fa-heartbeat program-icon"></i>
+                    <h3>Health Initiatives</h3>
+                    <p>Our Health Initiatives program works to improve healthcare access in rural and underserved communities. We provide free medical camps, awareness programs, and collaborate with local hospitals to reduce healthcare inequality.</p>
+                </div>
+    
+                <!-- Program 3: Environmental Awareness -->
+                <div class="program-item">
+                    <i class="fas fa-leaf program-icon"></i>
+                    <h3>Environmental Awareness</h3>
+                    <p>The Environmental Awareness program focuses on educating communities about sustainable practices. We run tree plantation drives, waste management campaigns, and workshops to encourage eco-friendly habits and protect our planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+          
+
+    <section id="volunteer" style="background-image: url('images/vol.jpg');">
+        <div class="overlay">
+            <div class="section-container">
+                <h2>Volunteer with Us</h2>
+                <p>Join our team of passionate volunteers and help create positive change in the community!</p>
+                <div class="volunteer-content">
+                    <!-- Photo Section -->
+                    <div class="volunteer-photo">
+                        <img src="images/vol1.jpg" alt="Volunteers working together">
+                    </div>
+                    <!-- Volunteer Form -->
+                    <div class="volunteer-form">
+                        <form action="#" method="POST">
+                            <label for="vol-name">Name:</label>
+                            <input type="text" id="vol-name" name="vol-name" placeholder="Your Name" required>
+                            
+                            <label for="vol-email">Email:</label>
+                            <input type="email" id="vol-email" name="vol-email" placeholder="Your Email" required>
+    
+                            <label for="vol-message">Why do you want to volunteer?</label>
+                            <textarea id="vol-message" name="vol-message" placeholder="Tell us why you'd like to join" required></textarea>
+    
+                            <button type="submit">Apply to Volunteer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recent-donations">
+        <div class="section-container">
+            <h2>Recent Donations</h2>
+            <p>We are grateful to our donors for their generous contributions!</p>
+            <div class="donation-list">
+                <!-- Donation Item 1 -->
+                <div class="donation-item">
+                    <img src="images/donor1.jpg" alt="Donor 1">
+                    <div class="donor-details">
+                        <h3>John Doe</h3>
+                        <p class="donation-time">1 hour ago</p>
+                        <p class="cause">Child Education</p>
+                    </div>
+                    <p class="amount">$500</p>
+                </div>
+                <!-- Donation Item 2 -->
+                <div class="donation-item">
+                    <img src="images/donor2.jpg" alt="Donor 2">
+                    <div class="donor-details">
+                        <h3>Jane Smith</h3>
+                        <p class="donation-time">2 hours ago</p>
+                        <p class="cause">Food Distribution</p>
+                    </div>
+                    <p class="amount">$300</p>
+                </div>
+                <!-- Donation Item 3 -->
+                <div class="donation-item">
+                    <img src="images/donor3.jpg" alt="Donor 3">
+                    <div class="donor-details">
+                        <h3>Mike Johnson</h3>
+                        <p class="donation-time">3 hours ago</p>
+                        <p class="cause">Winter Clothes</p>
+                    </div>
+                    <p class="amount">$150</p>
+                </div>
+                <!-- Donation Item 4 -->
+                <div class="donation-item">
+                    <img src="images/donor4.jpg" alt="Donor 4">
+                    <div class="donor-details">
+                        <h3>Emma Watson</h3>
+                        <p class="donation-time">5 hours ago</p>
+                        <p class="cause">Healthcare</p>
+                    </div>
+                    <p class="amount">$250</p>
+                </div>
+            </div>
+            <!-- Donate Now Button -->
+            <div class="donate-now">
+                <a href="form.html" class="donate-button">Donate Now</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="section-container">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <!-- Map -->
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.2100454561!2d72.5797429!3d23.0204978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84fbaa72f51f%3A0xf6c83b7c1ae8e0ff!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <h4>About Us</h4>
+                    <p>We are a non-profit organization dedicated to empowering communities through education, healthcare, and sustainability initiatives.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:info@ngo.org">info@ngo.org</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+                    <p>Address: 123 NGO Street, City, State, ZIP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Minati Foundation. All rights reserved.</p>
+                <p>Follow us on:
+                    <a href="#" target="_blank">Facebook</a> | 
+                    <a href="#" target="_blank">Twitter</a> | 
+                    <a href="#" target="_blank">Instagram</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+
+   <script>
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+    this.classList.toggle("active");
+    document.querySelector("nav ul").classList.toggle("active");
+});
+
+   </script> 
+</body>
+</html>
