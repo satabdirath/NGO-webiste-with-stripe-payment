@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php'; // Include Stripe PHP library
-\Stripe\Stripe::setApiKey('sk_test_51PBFNmSC7quupKi5iIZu86dsbnmdpHZ5qU2oGQ2uw2bJqd9hVbnR88fPDLlbyT485veaSh1toVSYh76gbZY4uH3b00rkDMuCf4');
+\Stripe\Stripe::setApiKey('sk_test_your_stripe_api_keys');
 
 // Database connection
 $host = 'localhost';
