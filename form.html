@@ -100,7 +100,7 @@
   </div>
 
   <script>
-    const stripe = Stripe('pk_test_51PBFNmSC7quupKi5iiqTRPhF33ndiHBRDHn5FzYX9Iw69wjAKXtt6PKtfWSIwjEsoYiUuXkfWdmGPm6VsV1ov8F100tj3hbzc6');
+    const stripe = Stripe('your_stripe_api_key');  
     const elements = stripe.elements();
     const cardElement = elements.create('card');
     cardElement.mount('#card-element');
@@ -111,10 +111,9 @@
       const amount = document.getElementById('amount').value;
       const email = document.getElementById('email').value;
 
-      // Show the modal while processing
+     
       showModal("Processing Payment", "Please wait...");
 
-      // Create PaymentIntent via server
       const response = await fetch('process_donation.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -127,7 +126,7 @@
         return;
       }
 
-      // Confirm the payment on the frontend
+  
       const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: cardElement,
@@ -138,7 +137,7 @@
       if (confirmError) {
         showModal("Error", `Error: ${confirmError.message}`);
       } else if (paymentIntent.status === 'succeeded') {
-        // Payment success, show success message
+       
         showModal("Payment Successful!", "Thank you for your donation.");
         setTimeout(() => {
           window.location.href = 'index.php';
@@ -146,16 +145,15 @@
       }
     });
 
-    // Function to show the modal
+    
     function showModal(heading, message) {
       document.getElementById('modal-heading').innerText = heading;
       document.getElementById('modal-message').innerText = message;
-      document.getElementById('success-modal').style.display = 'flex'; // Display modal
+      document.getElementById('success-modal').style.display = 'flex'; 
     }
 
-    // Function to close the modal
     function closeModal() {
-      document.getElementById('success-modal').style.display = 'none'; // Hide modal
+      document.getElementById('success-modal').style.display = 'none'; 
     }
   </script>
 </body>
